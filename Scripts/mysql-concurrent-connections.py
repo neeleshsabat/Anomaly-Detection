@@ -1,5 +1,6 @@
 import mysql.connector
 import threading
+import random
 
 # MySQL connection parameters
 host = "localhost"
@@ -8,8 +9,10 @@ password = "your_password"
 database = "your_database"
 table_name = "your_table"
 
-# Number of concurrent connections
-num_connections = 10
+# Generate a random number of concurrent connections
+min_connections = 5
+max_connections = 150
+num_connections = random.randint(min_connections, max_connections)
 
 # Function to execute queries
 def execute_queries():
